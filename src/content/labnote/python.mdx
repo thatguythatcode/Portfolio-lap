@@ -1,0 +1,80 @@
+---
+
+title: "🧪 Python Visualization & Automation"
+excerpt: "From data-driven dashboards to AI assistants, built in Python with Plotly, Streamlit, and LangChain."
+date: "2025-03-02"
+tags: \["python", "data-viz", "streamlit", "ai", "automation"]
+--------------------------------------------------------------
+
+# Python Visualization & Automation
+
+This note logs experiments where Python bridges data, automation, and AI into usable interfaces and internal tools.
+
+---
+
+## 📊 Interactive Dashboards
+
+Created data apps with Plotly Dash and Streamlit:
+
+* Real-time sensor graphs from MQTT feeds
+* Interactive filters for huge CSV datasets
+* Theme toggle + export-to-PDF features
+
+```python
+import streamlit as st
+import pandas as pd
+
+data = pd.read_csv("metrics.csv")
+st.line_chart(data["cpu_usage"])
+```
+
+---
+
+## 🤖 AI Prompt Tools
+
+Built small LLM-based workflows using LangChain + OpenAI:
+
+* Chat interface to summarize long reports
+* Form-to-prompt UX for generating custom SQL queries
+* Embedded vector search for internal knowledge
+
+```python
+from langchain.chains import LLMChain
+chain = LLMChain(prompt=prompt_template, llm=chat_openai)
+result = chain.run(input_data)
+```
+
+---
+
+## ⚙️ Automation Scripts
+
+Automated daily ops with Python:
+
+* Cron-based report generation with HTML exports
+* SFTP backups using `paramiko`
+* Notion + GitHub integration for daily changelogs
+
+```python
+import schedule, os
+schedule.every().day.at("08:00").do(generate_report)
+```
+
+---
+
+## 🧠 Learnings
+
+* Streamlit makes data UIs very fast to prototype, but browser performance can bottleneck on large sets
+* LangChain chains simplify complex LLM behaviors but require caching for production use
+* Async + sched + requests is a reliable trio for most automation tasks
+
+---
+
+## ✅ Next Experiments
+
+* Build an AI-powered data validation dashboard
+* Real-time crypto dashboard using WebSocket APIs
+* Browser-based Python kernel with Pyodide
+
+---
+
+More data/AI/automation utilities to come. 🧬

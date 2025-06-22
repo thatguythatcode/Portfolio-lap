@@ -1,0 +1,59 @@
+---
+
+title: "🧪 Rust Systems Experiments"
+excerpt: "Experiments with Rust in CLI tools, WASM, and memory-safe systems programming."
+date: "2025-04-08"
+tags: \["rust", "cli", "wasm", "systems"]
+-----------------------------------------
+
+# Rust Systems Experiments
+
+Low-level, high-safety experiments exploring Rust for performance-focused tools, WebAssembly, and systems programming.
+
+---
+
+## ⚙️ CLI Tools with Clap
+
+Built robust command-line utilities with:
+
+* Argument parsing via `clap`
+* Multi-threaded file I/O
+* Colorized terminal outputs with `colored`
+
+```rust
+use clap::{App, Arg};
+fn main() {
+  let matches = App::new("Tool").arg(Arg::new("input").required(true)).get_matches();
+  println!("Input file: {:?}", matches.value_of("input"));
+}
+```
+
+---
+
+## 🧪 WASM UI Components
+
+* Built a WebAssembly-powered UI widget
+* Shared logic between native + web
+* Used `wasm-bindgen` for JS interop
+
+---
+
+## 🧠 Learnings
+
+* Rust’s compiler teaches you to think about safety by default
+* Building with Cargo + crates makes dependency management pleasant
+* WASM opens the door to high-perf frontend modules without JS overhead
+
+---
+
+## ✅ Next Experiments
+
+* Real-time log monitor UI in terminal
+* GUI with Tauri or egui
+* Compile Rust to embedded devices
+
+---
+
+More memory-safe madness to come. 🦀
+
+

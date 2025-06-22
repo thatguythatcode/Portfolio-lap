@@ -1,0 +1,90 @@
+---
+
+title: "🧪 JavaScript UI Experiments"
+excerpt: "Testing the limits of web UI with modern JavaScript, GSAP, and WebGL."
+date: "2025-01-10"
+tags: \["javascript", "webgl", "gsap", "experiments"]
+-----------------------------------------------------
+
+# JavaScript UI Experiments
+
+Explorations in browser-based UIs — powered by JavaScript, creative coding libraries, and GPU-accelerated effects.
+
+---
+
+## 🌊 WebGL Wave Effects
+
+Built animated wave overlays with:
+
+* **THREE.js** and fragment shaders
+* Dynamic lighting via mouse movement
+* Background depth simulation
+
+```js
+uniform float u_time;
+void main() {
+  vec2 uv = gl_FragCoord.xy / resolution.xy;
+  float wave = sin(uv.x * 10.0 + u_time) * 0.05;
+  gl_FragColor = vec4(uv + wave, 0.5, 1.0);
+}
+```
+
+---
+
+## 🚀 Scroll-Based Timelines
+
+GSAP + ScrollTrigger magic:
+
+* UI elements animate on scroll position
+* Interactive pin-based sections
+* Fine-grained timeline controls
+
+```js
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section",
+    start: "top center",
+    scrub: true
+  }
+})
+.to(".title", { opacity: 1, y: 0 })
+.to(".image", { scale: 1.2 });
+```
+
+---
+
+## 🔍 Interactive Code Editor UI
+
+Created a mini code sandbox in-browser:
+
+* Syntax highlighting with `Prism.js`
+* Live preview iframe updates
+* JSON schema visual editor
+
+```js
+document.getElementById('editor').addEventListener('input', updatePreview);
+function updatePreview() {
+  const code = editor.value;
+  preview.srcdoc = `<script>${code}<\/script>`;
+}
+```
+
+---
+
+## 🧠 Learnings
+
+* Modern JS frameworks (e.g. React, Svelte) abstract a lot — experiment outside of them to understand fundamentals.
+* GPU-powered effects are easier to implement with libraries like THREE.js or PixiJS.
+* Use intersection observers to create lightweight scroll interactions without full animation libraries.
+
+---
+
+## ✅ Next Experiments
+
+* Web-based retro terminal with animated CRT scanlines
+* Voice-controlled UI overlays
+* JavaScript-based MIDI input interface
+
+---
+
+More browser oddities coming soon. 🌐

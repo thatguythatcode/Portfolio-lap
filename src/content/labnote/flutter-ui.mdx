@@ -1,0 +1,100 @@
+---
+
+title: "📱 Flutter UI Experiments"
+excerpt: "Logs of strange and beautiful things I’ve built with Flutter."
+date: "2024-12-01"
+tags: \["flutter", "rive", "ui", "experiments"]
+-----------------------------------------------
+
+# Flutter UI Experiments
+
+Here I document weird and wonderful UIs I’ve built using **Flutter**, **Rive**, and lots of caffeine. 🧹
+
+---
+
+## 🌀 Animated Login Screens
+
+Built a fully animated login screen with:
+
+* Rive integration (custom loading animation)
+* Haptic feedback on validation
+* Smooth transitions between login and signup
+
+```dart
+RiveAnimation.asset(
+  'assets/animations/login_loop.riv',
+  fit: BoxFit.cover,
+)
+```
+
+---
+
+## 🎻 Gesture-Driven Controls
+
+Experimented with creating touch-based controls using `GestureDetector` and `CustomPaint`.
+
+### Examples:
+
+* Knob-style volume dial
+* Sliders with animated feedback
+* Tap-hold-rotate interactions
+
+```dart
+GestureDetector(
+  onPanUpdate: (details) => updateValue(details),
+  child: CustomPaint(painter: DialPainter(value)),
+)
+```
+
+---
+
+## 🪿 Magic Mirror UI (Camera + Shader)
+
+Used the `camera` plugin and GLSL shaders for a surreal UI effect:
+
+* Real-time face distortion
+* Color channel shifting based on voice pitch
+* Tap to toggle "mirror modes"
+
+```dart
+ShaderMask(
+  shaderCallback: (rect) => myCustomFragmentShader(rect),
+  child: CameraPreview(controller),
+)
+```
+
+---
+
+## 🛀 Rive State Machines
+
+Played with more advanced Rive features:
+
+* Synced form validation state to Rive inputs
+* Animated character reacts to user typing
+* Success trigger on form completion
+
+```dart
+controller.isActive = isFormValid;
+riveArtboard.addController(controller);
+```
+
+---
+
+## 🧹 Learnings
+
+* Rive adds polish, but keep asset sizes in mind for mobile.
+* Flutter animation APIs are surprisingly powerful — `AnimatedBuilder` + `TweenSequence` is your friend.
+* Avoid nesting `setState()` with animations. It leads to jank.
+
+---
+
+## ✅ Next Experiments
+
+* UI for a terminal-style dashboard
+* Integrate voice and touch together
+* Build a design system with motion baked in
+
+---
+
+Thanks for checking out the lab logs. 🚧
+More Flutter UI strangeness coming soon.

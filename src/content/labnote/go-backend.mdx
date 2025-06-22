@@ -1,0 +1,64 @@
+---
+
+title: "🧪 Go Backend Systems"
+excerpt: "Explorations in Go for building lightweight, performant backend systems and tools."
+date: "2025-04-18"
+tags: \["go", "backend", "api", "concurrency"]
+----------------------------------------------
+
+# Go Backend Systems
+
+Experiments using Go for backend services, CLIs, and concurrent tooling.
+
+---
+
+## 🌐 APIs with Gin
+
+Built web APIs with:
+
+* Route groups and middleware
+* JWT authentication
+* Rate limiting
+
+```go
+r := gin.Default()
+r.GET("/ping", func(c *gin.Context) {
+  c.JSON(200, gin.H{"message": "pong"})
+})
+```
+
+---
+
+## 🧵 Goroutines for Concurrency
+
+* Multi-worker queue processing
+* Channels for safe data sharing
+* Timers and tickers for periodic jobs
+
+---
+
+## 📦 CLI Tools with Cobra
+
+* Git-style command structure
+* Helpful usage printing
+* Config file parsing
+
+---
+
+## 🧠 Learnings
+
+* Goroutines make concurrency approachable, but you must manage lifetimes
+* The Go standard lib is impressively batteries-included
+* Simple language, fast iteration — good for MVPs
+
+---
+
+## ✅ Next Experiments
+
+* Distributed job queue in Go
+* SQLite-backed microservice
+* Cross-compilation for ARM devices
+
+---
+
+More Go-powered systems soon. 🦫

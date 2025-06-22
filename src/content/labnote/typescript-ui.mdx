@@ -1,0 +1,78 @@
+---
+
+title: "🧪 TypeScript Systems UI"
+excerpt: "Typed, structured UI experiments with TypeScript, React, and state machines."
+date: "2025-02-05"
+tags: \["typescript", "react", "xstate", "ui"]
+----------------------------------------------
+
+# TypeScript Systems UI
+
+Experiments focused on typed UI architectures and building maintainable, predictable state-driven UIs with TypeScript.
+
+---
+
+## 🧭 State Machine UIs
+
+Built deterministic UI flows with XState:
+
+* Declarative state diagrams
+* Machine logic mirrored in component structure
+* Devtools for state inspection
+
+```ts
+const machine = createMachine({
+  id: "formFlow",
+  initial: "idle",
+  states: {
+    idle: { on: { FOCUS: "editing" } },
+    editing: { on: { SUBMIT: "validating" } },
+    validating: { on: { SUCCESS: "success", ERROR: "error" } },
+    success: {},
+    error: {},
+  },
+});
+```
+
+---
+
+## 🧪 Form Builders with Types
+
+* Custom reusable form hooks with Zod validation
+* Strongly typed form schemas
+* Dynamic rendering based on field descriptors
+
+```ts
+type FormSchema = z.infer<typeof schema>
+const { register, handleSubmit } = useForm<FormSchema>({ resolver: zodResolver(schema) });
+```
+
+---
+
+## 🔬 Visual Debugging Panels
+
+Made developer overlays for real-time inspection:
+
+* Hook state tracing with `why-did-you-render`
+* Time-traveling state in Redux Toolkit
+* UI breakpoint visualizer overlays
+
+---
+
+## 🧠 Learnings
+
+* Type inference with Zod or Yup greatly enhances dev ergonomics
+* XState diagrams help onboard new developers
+* TypeScript reduces edge case bugs when wiring complex props
+
+---
+
+## ✅ Next Experiments
+
+* UI for finite automata simulation
+* Component architecture explorer
+* Strongly-typed theming system with tokens
+
+---
+
+More TypeScript-powered experiments coming 🔧
