@@ -1,10 +1,12 @@
+export const dynamic = "force-dynamic";
+
 import { getNoteBySlug, getNoteSlugs } from "@/lib/mdx";
 import { serialize } from "next-mdx-remote/serialize";
 import PageTitle from "@/components/shared/PageTitle";
 import MdxContent from "@/components/ui/MdxContent";
 
 type Props = {
-  params: Promise<{ slug: string }>; // params is now async
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -16,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 export default async function NotePage({ params }: Props) {
-  const { slug } = await params; // ✅ Explicitly await params
+  const { slug } = await params;
 
   const note = await getNoteBySlug(slug);
   const mdxSource =
