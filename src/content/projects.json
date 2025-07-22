@@ -16,7 +16,7 @@
     "tools": ["Next.js", "Tailwind CSS", "TypeScript"],
     "description": "Developed a web application for tracking and managing certificates using Next.js, Tailwind CSS, and TypeScript. The app provides an intuitive interface for users to view and manage their certificates.",
     "github": "https://github.com/thatguythatcode/certracker_api",
-    "demo": "https://certrack.com/",
+    "demo": "https://certracker.com/",
     "playground": false
   },
   {
